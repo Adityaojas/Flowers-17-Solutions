@@ -15,7 +15,9 @@ Extract the 'jpg' folder from the zip file downloaded.
 'minivggnet_aug_lrs_flower17.py' solves the problem by applying both learning rate scheduling and data augmentation. The accuracy can be seen to increase from 65% to over 76%. Overfitting has significantly diminished. Data Augmentation and Learning rate scheduling clearly improved the classification given the architecture.
 
 Next up is the tranfer learning approach.
+
+[IMPORTANT]
 Using Flower17_extract_features_VGG16.py, I extract the features of the Flower 17 dataset using the pretrained imagenet weights of VGG16 architecture available in the keras.applications module. I chop off the architecture at the head (final Fully-Connected layers, just after the last Pooling Layer) to get a flattened feature set of dimensions (N, 512*7*7) {N is the number of datapoints, (7, 7, 512) is the shape of the output of each datapoint after the network is chopped off. The heavy feature dataset is stored in .hdf5 format to help it fit in the RAM. h5py module is used for this purpose. The final .hdf5 feature set and labels are stored in the directory: Flower_17/transfer_learning_VGG16/
 
-Flower17_extract_features_VGG16_logistic_reg.py uses the extracted features and applies simple logistic regression and tunes the hyperparameters to obtain about 91% of classification accuracy which is huge increment from our last approach.
+Flower17_transfer_learning_VGG16_logistic_reg.py uses the extracted features and applies simple logistic regression and tunes the hyperparameters to obtain about 91% of classification accuracy which is huge increment from our last approach.
 
