@@ -21,3 +21,4 @@ Using Flower17_extract_features_VGG16.py, I extract the features of the Flower 1
 
 Flower17_transfer_learning_VGG16_logistic_reg.py uses the extracted features and applies simple logistic regression and tunes the hyperparameters to obtain about 91% of classification accuracy which is huge increment from our last approach.
 
+Flower_17 finetuning is a network surgery approach the would use the body of VGG16 architecture, and a custom head network which eventually would consist of a 2 fully connected Dense layers. Thw warming up accuracy (trained on 25 epochs) using the RMSprop optimizer comes out to be about 87% and the final accuracy after training 100 epochs post warm up comes out to be about 92%.
